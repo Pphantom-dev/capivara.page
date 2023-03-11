@@ -1,3 +1,108 @@
+
 body {
-background: green;
+    margin: 0;
+    padding: 0;
+    background: rgb(245, 7, 7);
 }
+
+.anim {
+    left: 40%;
+    top: 40%;
+    position: absolute;
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    position: relative;
+}
+
+.anim::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 2px solid transparent;
+}
+
+.anim:hover::before {
+    animation: animate 1s linear forwards;
+}
+
+@keyframes animate {
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: black;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    
+    50% {
+        width: 100%;
+        height: 0;
+        border-top-color: black;
+        border-right-color: black;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+
+    100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: black;
+        border-right-color: black;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+
+}
+
+.anim::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 2px solid transparent;
+}
+
+.anim:hover::after {
+    animation: animate 1s linear forwards;
+}
+
+@keyframes animates {
+    0% {
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: black;
+    }
+
+    50% {
+        width: 0;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: black;
+        border-left-color: black;
+    }
+
+    100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: black;
+        border-left-color: black;
+    }
+}
+
